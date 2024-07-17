@@ -1,15 +1,15 @@
 import React from "react"
 
-const WeatherDisplay = ({ weatherData }) => {
+const WeatherDisplay = ({ weather }) => {
+  const { temperature, conditions } = weather;
+  const tempStyle = {
+    color: temperature > 20 ? 'red' : 'blue'
+  };
+
   return (
     <div>
-      <p>
-        Temperature:{" "}
-        <span style={{ color: weatherData.temperature > 20 ? "red" : "blue" }}>
-          {weatherData.temperature}
-        </span>
-      </p>
-      <p>Conditions: {weatherData.conditions}</p>
+      <p style={tempStyle}>Temperature: {temperature}</p>
+      <span>Conditions: {conditions}</span>
     </div>
   );
 };

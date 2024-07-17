@@ -4,18 +4,17 @@ import React, { useState, useEffect } from "react";
 import WeatherDisplay from "./WeatherDisplay";
 
 const App = () => {
-  const [weatherData, setWeatherData] = useState({
-    temperature: 0,
-    conditions: ""
-  });
+  const [weather, setWeather] = useState({ temperature: 0, conditions: "" });
 
   useEffect(() => {
-    setWeatherData({ temperature: 25, conditions: "Sunny" });
+    // Simulating fetching weather data
+    const weatherData = { temperature: 25, conditions: "Sunny" };
+    setWeather(weatherData);
   }, []);
 
   return (
     <div>
-      <WeatherDisplay weatherData={weatherData} />
+      <WeatherDisplay weather={weather} />
     </div>
   );
 };
