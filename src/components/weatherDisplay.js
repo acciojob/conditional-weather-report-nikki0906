@@ -1,22 +1,17 @@
-// import Bluebird from 'cypress/types/bluebird'
-import React from 'react'
+import React from "react"
 
-
-
-   function WeatherDisplay({temperature,condition}){
-
-      const tempStyle = {
-        color : temperature > 20 ? 'red' : 'Blue',
-      };
-
-   
+const WeatherDisplay = ({ weatherData }) => {
   return (
     <div>
-        <p style={tempStyle}>temperatue : {temperature}°C</p>
-      <p>condtions : {condition}</p>
+      <p>
+        Temperature:{" "}
+        <span style={{ color: weatherData.temperature > 20 ? "red" : "blue" }}>
+          {weatherData.temperature}
+        </span>
+      </p>
+      <p>Conditions: {weatherData.conditions}</p>
     </div>
-  )
-}
+  );
+};
 
-
-export default WeatherDisplay
+export default WeatherDisplay;
